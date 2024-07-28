@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
+"""Starts a Flask web application.
 
-#this project task we install flask and we create the first hello world file in flask.
-
+The application listens on 0.0.0.0, port 5000.
+Routes:
+    /: Displays 'Hello HBNB!'
+"""
 from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/', strict_slashes=False)
-def hello():
+@app.route("/", strict_slashes=False)
+def hello_hbnb():
+    """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0", port=5000)
+
